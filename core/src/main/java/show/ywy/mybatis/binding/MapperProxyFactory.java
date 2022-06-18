@@ -1,6 +1,6 @@
 package show.ywy.mybatis.binding;
 
-import show.ywy.mybatis.session.SqlSession;
+import show.ywy.session.SqlSession;
 
 import java.lang.reflect.Proxy;
 
@@ -13,7 +13,7 @@ public class MapperProxyFactory<T> {
     }
 
     public T newInstance(SqlSession sqlSession) {
-        final MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface);
+        MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface);
         return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[]{mapperInterface}, mapperProxy);
     }
 

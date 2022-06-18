@@ -1,11 +1,10 @@
 package show.ywy.mybatis.binding;
 
-import show.ywy.mybatis.session.SqlSession;
+import show.ywy.session.SqlSession;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-
 
 public class MapperProxy<T> implements InvocationHandler, Serializable {
 
@@ -27,5 +26,4 @@ public class MapperProxy<T> implements InvocationHandler, Serializable {
             return sqlSession.selectOne(method.getName(), args);
         }
     }
-
 }

@@ -1,7 +1,7 @@
 package show.ywy.mybatis.binding;
 
 import cn.hutool.core.lang.ClassScanner;
-import show.ywy.mybatis.session.SqlSession;
+import show.ywy.session.SqlSession;
 
 import java.util.HashMap;
 import java.util.Map;
